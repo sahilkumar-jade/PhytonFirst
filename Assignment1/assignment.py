@@ -1,7 +1,7 @@
 from abc import ABC , abstractmethod
 import math
 
-class student:
+class Student:
     def __init__(self , name , age , grade):
         #now down comes the attributes 
         self.name = name 
@@ -20,7 +20,7 @@ class student:
         print(f"Name: {self.name} , Age: {self.__age}, Grade: {self.grade}")
 
 
-class HighSchoolStudents(student):
+class HighSchoolStudents(Student):
     def __init__(self , name , age , grade , grade_level):
         super().__init__(name , age, grade) # this super is like in java calls the parent class constructor
         self.grade_level = grade_level
@@ -32,8 +32,8 @@ class HighSchoolStudents(student):
         )
 
 #poly
-def print_student_info(student):
-    student.display_info()
+def print_student_info(obj):
+    obj.display_info()
 
 
 class Shape(ABC):
@@ -59,11 +59,11 @@ class rectangle(Shape):
         return self.length * self.width
     
 
-student1 = student("Sahil" , "21" , "B")
-student2 = HighSchoolStudents("Mayank" , "22", "A" ,"ECE-4th-Year")
+p = Student("Sahil" , "21" , "B")
+c= HighSchoolStudents("Mayank" , "22", "A" ,"ECE-4th-Year")
 
-print_student_info(student1)
-print_student_info(student2)
+print_student_info(p)
+print_student_info(c)
 
 circle = Circle(5)
 rect_obj = rectangle(4, 6)
